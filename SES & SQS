@@ -1,0 +1,14 @@
+SES:(Simple Email Service)
+
+We can send and recieve emails.
+usecase:
+- E-mail marketing
+- Bulk email marketing.
+- Transaction email notification to customer.
+
+
+-------------------------
+
+SQS :(SimpleQueueService)
+
+- it is reliable,scalable,fully-managed message Queuing service.
