@@ -1,5 +1,0 @@
-RDS task:
-1. Take backup
-2. Restore database
-3. set Read Replica
-4. Send Notification when low storage
