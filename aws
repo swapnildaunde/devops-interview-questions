@@ -1,0 +1,3 @@
+five
+Elastic IP Address Limit
+By default, all AWS accounts are limited to five (5) Elastic IP addresses per Region
