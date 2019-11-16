@@ -1,3 +1,11 @@
+ 
+once you stop the public ip if start again ip address will be change then what to do to make it same?
+=> Attach elastic ip.
+
+how many Elastic IPs per Region?
+Elastic IP Address Limit : five
+By default, all AWS accounts are limited to five (5) Elastic IP addresses per Region
+
 How to install aws cli?
 => pip install awscli
 
