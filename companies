@@ -1,0 +1,83 @@
+How to install aws cli?
+=> pip install awscli
+
+How to check aws cli installed or not?
+=> aws --version 
+
+How to configure aws account?
+=> aws configure
+
+Command to check list of buckets in aws account?
+=> aws s3 ls
+
+Aws cli configuration files location?
+=> ~/.aws/
+
+Aws cli configuration files?
+=> ~/.aws/config => region=us-west-2, output=json 
+  ~/.aws/credentials => aws_access_key_id, aws_secret_access_key
+
+There are two windows machine on two diff VPC and one is public and second one is private how to connect them?
+=>  
+
+If we deployed failed build on production server then what strategy you use for rollback?
+=>
+
+What is the "property" tag in pom.xml
+=>
+
+What thresold value you have set for jacoco plugin
+=> min and max threshold in percentage 50-80
+
+diff between dependencies and dependenciesmanager tags in pom.xml?
+=>
+
+diff between pugins and pluginsmanager tags in pom.xml?  
+=>
+
+If your pem file is gone then how to connect to the ec2 instance?
+=>
+
+What are types of ec2 instance?
+=>
+
+Write a command to connect one instance to another in windows and ubunutu?
+=>
+
+How do you send an email to the user who commited the code and build fails?
+=>
+
+docker stop and start?
+=>
+
+git pull vs fetch
+=>
+
+what is git config?
+=>
+
+What is staging and index in git?
+=>
+
+Newtworking model used in the docker?
+=>
+
+Application log monitoring tools?
+=> splunk, elk, lambda
+
+
+git clone using jenkins?
+=>
+
+Why ansible is configuration management tool?
+=>
+
+How to share volume to multiple containers?
+=>
+
+If pod has multiple containers then how to share volume between them?
+=>
+
+How to automate CI-CD pipeline?
+=> goto github repo => settings => Webhooks => add webhook => add url http://jenkins_server_url/github-webhook/ 
+  then in jenkins selecting github hook trigger for scm polling option in build trigger section.
