@@ -1,0 +1,42 @@
+ELB:-
+usecases:
+- horizontal scaling by adding more and more ec2 instances.
+- highly available, by deploying aur application across diff AZs.
+- In case of zone failure our applcation still running and there will not be downtime for that.
+
+Feature:
+- Elb is specific to VPC
+- It can load balance ec2 instance which are in same VPC
+- It can't load balance ec2 instance across multiple VPCs
+- It can't load balance ec2 instance across multiple regions (use Route53)
+- It is a fully managed service.
+- It can be secured by using security groups
+- It performs health checks, to make sure it only route to the healthy instances.
+- It support SSL termination, When we configure hhtps using ssl certificate.
+
+ALB :
+- ALB designed for microservice based applications.
+- In microservices based applications we generally need routing based on port and based on path.
+- Maintain one ALB to routes the traffic to the different microservices instead of having one load balancer to each microservices.
+
+There are different components
+- ALB
+- listeners
+- Target groups
+
+Suppose There are 2 microservices 
+- orders
+- payments
+
+Target Groups :-
+Target Groups contains running group of ec2 instances for a specific microservice.
+There are n number of target groups for n number of microservices.
+
+listens :-
+We have 2 listens which helps making routing decisions.
+It helps ALB when to route traffic to the orders and when to the payments.
+
+The Routing can happen based on the path i.e when request comes to the ALB 
+and containing '/orders/*' to the path it is routed to the orders microservice and vice versa for '/payments/*'.
+The same way routing decision can be made based on the port i.e suppose 80 for orders and 90 for payments.  
+         
