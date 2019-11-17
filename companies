@@ -32,7 +32,11 @@ If we deployed failed build on production server then what strategy you use for 
 =>
 
 What is the "property" tag in pom.xml
-=>
+=><properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 
 What thresold value you have set for jacoco plugin
 => min and max threshold in percentage 50-80
