@@ -1,0 +1,13 @@
+Artifacts :
+
+Wherever you read about continuous delivery or continuous integration it's recommended to use an artifact repository to store the artifacts even though Jenkins already stores them for each build.
+
+An artifact repository and continuous integration tools serve two different purposes and one cannot be substituted with the other. 
+Jenkins stores the artifacts as plain files without versioning while artifacts in an artifact repository can be version controlled. So you have a lot more flexibility in retrieving artifacts and governing them.
+
+Artifact repository is a collection of binary software artifacts and metadata stored in a defined directory structure which is used by clients such Maven, Mercury, or Ivy to retrieve binaries during a build process.
+
+In the case of the Maven repository, the primary type of binary artifact is a JAR file containing Java bytecode. 
+A Maven repository provides a platform for the storage, retrieval, and management of binary software artifacts and metadata.
+
+In Maven, every software artifact is described by an XML document called a Project Object Model (POM). This POM contains information that describes a project and lists a project's dependencies - the binary software artifacts which a given component depends upon for successful compilation or execution. When Maven downloads a dependency from a repository, it also downloads that dependency's POM. Given a dependency's POM, Maven can then download any other libraries which are required by that dependency. The ability to automatically calculate a project's dependencies and transitive dependencies is made possible by the standard and structure set by the Maven repository.
