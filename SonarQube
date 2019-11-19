@@ -32,6 +32,8 @@ SonarQube Server
 SonarQube Database
 What is the use of SonarQube Database ?
 SonarQube Database stores configuration of the SonarQube instance like security settings and they also store project quality snapshot.
+Sonar uses a Derby or H2 as default database. When running Sonar, it says that these databases may only be used for evaluation. 
+We can change this default database and use our custom DB.
 
 What is the use of SonarQube Scanners ?
 It analyze projects on Continuous Integration Servers
@@ -47,9 +49,3 @@ How to create reports in SonarQube?
 To create reports using SonarQube
 mvn clean install
 mvn sonar:sonar -Dsonar.issuesreport.html.enable=true
-
-What is role of database in SonarQube?
-•       Sonar uses a Derby or H2 as default database. When running Sonar, it says that these databases may only be used for evaluation. We can change this default database and use our custom DB.
-
-How to create reports in SonarQube?
-•       To create reports using SonarQube mvn clean install mvn sonar:sonar -Dsonar.issuesreport.html.enable=true
