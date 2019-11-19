@@ -1,0 +1,158 @@
+FREQUENTLY ASKED MAVEN INTERVIEW QUESTION
+What is maven ?
+Maven is a project management tool.It provides a complete build life cycle.To create a maven project we require a pom file per project.
+
+How to check that maven is properly setup ?
+Go to command prompt and execute mvn --version. it will show information about maven version, maven home and java version
+
+What is archetype ?
+archetype creates project structure as per archetype.Maven has its own inbuilt archetype for example simple project has its own archetype, webapp has its own etc
+
+Can customized archetype be created ?
+Yes
+
+How to create maven Project from command Prompt ?
+Needs to follow below steps
+
+Go to command prompt
+create one folder where you want to create maven project
+Go to that folder location which you created in above step
+Run command mvn archetype:generate. It will download all plugin required for maven project and will ask you to enter archetype
+As per your project requirement enter that archetype number.It will download some more as per archetype
+As per your project requirement enter that archetype number
+Enter version
+It will prompt to enter groupId.Enter name of the groupId (Explained latter)
+It will prompt to enter artifactId.Enter name of the artifactId (Explained latter)
+It will prompt to enter version. You can select default one so just enter
+It will prompt to enter package. You can select default one so just enter
+Enter to confirm
+Above steps will create project with artifactId name under folder which was created on first step
+
+Does maven create any folder and file by default ?
+Yes, maven creates one src folder and pom.xml file under project
+
+How to compile maven project from command prompt ?
+Go to location where pom.xml exists and run command mvn compile. It will download some more plugin.
+
+How to package maven project from command prompt ?
+Go to location where pom.xml exists and run command mvn package. It will download some more plugin and will create package in {project name}\target with .jar or .war which we have in pom.xml under packaging tag
+
+How to package(jar,war etc) maven project from command prompt ?
+Go to location where pom.xml exists and run command mvn package. It will download some more plugin and will create package in {project name}\target with .jar or .war which we have in pom.xml under packaging tag.
+
+How to run maven project from command prompt ?
+Go to location where pom.xml exists and run command java -cp {BASE_DIR}\{PROJECT_NAME}\target\{PROJECT_NAME}-1.0-SNAPSHOT.jar packagename.classname.
+
+What is artifactId ?
+In simple term artifactId can be considered as a class.
+
+What is groupId ?
+In simple term groupId can be considered as a package.
+
+How maven uniquely identify a particular artifactId ?
+Using following tags combination
+
+groupId
+artifactId
+version
+What is the use of dependency tag in pom.xml ?
+Dependency tag gives information about to which groupId, artifactId, and version this project dependents.
+
+What does it mean by build life cycle and how is it related to maven ?
+A Build life cycle is a sequence of stage which define the order in which the goals are to be achieved
+
+Maven also maintains its own life cycle. Three build life cycle of maven is.
+
+Clean -> clean artifactory which was created earlier.
+build -> create that application.
+Site -> Generate Document.
+What are the phases of maven build life cycle ?
+Maven has following build life cycle phase
+
+validate : Validate that project is correctly created
+compile : Compile the project
+test : Test the compiled source code
+package : Package the compiled code for example war, jar etc
+verify : Verify that package is valid
+install : It is maven related install.It install package to local repository so that dependent project can use it
+deploy : Create the copy and share it with remote repository so that other project can use it.
+Does previous phases execute when any phase is executed in middle ?
+Yes previous phases are executed for example if mvn package is fired then it will execute validate, compile and test as well
+
+How to make test cases skip from command prompt ?
+There is an option -Dmaven.test.skip=true for example mvn package -Dmaven.test.skip=true
+
+How to delete or clean class files from command prompt ?
+There is a command mvn clean. It will be executed at pom.xml level.
+
+What is POM.xml file and use in maven
+POM is project object model.It gives information about project configuration and how this project is dependent on other artifactId
+
+What is compile scope ?
+Dependency will be inserted at compile time
+
+What is runtime scope ?
+Dependency will be inserted at runtime time, during compilation dependency is not required.
+
+What is test scope ?
+Dependency will be inserted when test phase will run.
+
+What is provided scope ?
+Dependency will be inserted by container for example web server.
+
+What is the default scope for any dependency ?
+compile
+
+What is the build directory ?
+target
+
+What is plugin in maven ?
+Plugin is a way by this we can extend the functionality of maven.Mostly all core component acts as plugin. Plugin are configurable.
+
+What is source tag in configuration tag in plugin in maven ?
+It gives information about jvm version. for example java 8 or 7.
+
+What is the default plugin in maven ?
+maven-compiler-plugin
+
+What is repository in maven ?
+Repository is a place where jars are saved or stored.Maven maintains three type of repository
+
+Local : It is in local machine
+Central : It is maintained by maven community
+Remote: It is the location where third party can put their jars
+Whar are the aspects managed by maven ?
+Documentation
+Reporting
+Dependencies
+SCMs
+Releases
+Distribution
+mailing list
+How to exclude particular dependency ?
+Using exclusions tag we can do this.
+<exclusions>
+<exclusion>
+<groupId>org.sample.ProjectB</groupId>
+<artifactId>Project</artifactId>
+</exclusion>
+</exclusions>
+What is the default location for maven repository ?
+C:\Users\{USER_NAME}\.m2\repository
+
+What is the use of build profile ?
+It is used to override default build parameter for example production environment
+
+Type of build profile ?
+They are of three type
+
+Per project : It's defined in per project pom.xml
+Per User : It's defined in setting.xml located at .m2 repository
+Global : It's defined in setting.xml located in conf folder
+How to install external jar in local repository ?
+mvn install:install-file -Dfile={jar name with path} -DgroupId={groupid} -DartifactId={artifactId} -Dversion={version} -Dpackaging=jar
+
+<dependency> <groupId>org.matlabcontrol</groupId>
+<artifactId>matlabcontrol</artifactId>
+<version>4.1.0</version>
+</dependency>
