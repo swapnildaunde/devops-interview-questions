@@ -45,7 +45,10 @@ diff between dependencies and dependenciesmanager tags in pom.xml?
 =>
 
 diff between pugins and pluginsmanager tags in pom.xml?  
-=>
+=>You use pluginManagement in a parent pom to configure it in case any child pom wants to use it, 
+but not every child plugin wants to use it. An example can be that your super pom defines some options for the maven Javadoc plugin. 
+Not each child pom might want to use Javadoc, so you define those defaults in a pluginManagement section. 
+The child pom that wants to use the Javadoc plugin, just defines a plugin section and will inherit the configuration from the pluginManagement definition in the parent pom.
 
 If your pem file is gone then how to connect to the ec2 instance?
 =>
