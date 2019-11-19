@@ -1,5 +1,14 @@
 What is SonarQube ?
-It is an open source platform for Continuous Inspection of code quality.
+Sonar is a web based code quality analysis tool for Maven based Java projects.
+Why use SonarQube?
+Sonar covers the 7 sections of code quality 
+        Architecture and Design
+•       Unit tests
+•       Duplicated code
+•       Potential bugs
+•       Complex code
+•       Coding standards
+•       Comments
 
 What was the earlier name of SonarQube ?
 Sonar
@@ -39,74 +48,8 @@ To create reports using SonarQube
 mvn clean install
 mvn sonar:sonar -Dsonar.issuesreport.html.enable=true
 
-
-SonarQube Interview Question 2018
-
-What is SonarQube?
-•       Sonar is a web based code quality analysis tool for Maven based Java projects. It covers a wide area of code quality check points which include: Architecture & Design, Complexity, Duplications, Coding Rules, Potential Bugs, Unit Test etc.
-
-Why use SonarQube?
-•       Sonar covers the 7 sections of code quality Architecture and Design
-•       Unit tests
-•       Duplicated code
-•       Potential bugs
-•       Complex code
-•       Coding standards
-•       Comments
-
 What is role of database in SonarQube?
 •       Sonar uses a Derby or H2 as default database. When running Sonar, it says that these databases may only be used for evaluation. We can change this default database and use our custom DB.
 
 How to create reports in SonarQube?
-•       To create reports using SonarQubemvn clean install mvn sonar:sonar -Dsonar.issuesreport.html.enable=true
-
-SonarQube?
-•       Sonar is a web based code quality analysis tool for Maven based Java projects. It covers a wide area of code quality check points which include: Architecture & Design, Complexity, Duplications, Coding Rules, Potential Bugs, Unit Test etc.
-
-What is SonarQube?
-•       It is an open source platform for Continuous Inspection of code quality.
-
-
-What was the earlier name of SonarQube ?
-•       Sonar
-
-Where does SonarQube help ?
-•       SonarQube provide report on coding standard , unit test, duplicate code, code coverage, potential bugs etc.
-
-
-At which port sonar server is available by default ?
-•       9000
-
-
-
-Does SonarQube only analysis java code ?
-•       No , SonarQube can analysis more than 20 languages.
-
-
-In which language SonarQube is written ?
-•       java
-
-
-What are the main components of SonarQube Platform ?
-•       SonarQube plugin for languages
-•       SonarQube Scanner
-•       SonarQube Server
-•       SonarQube Database
-
-
-
-What is the use of SonarQube Database ?
-•       SonarQube Database stores configuration of the SonarQube instance like security settings and they also store project quality snapshot.
-
-
-
-What is the use of SonarQube Scanners ?
-•       It analyze projects on Continuous Integration Servers
-
-
-Mention basic steps for SonarQube processing ?
-•       Developer develops code and sends its code into repository system like SCM, git
-•       An automatic build is fired in Continuous Integration Server and execution of SonarQube Scanner happens for SonarQube analysis.
-•       Report is sent to SonarQube Server for processing.
-•       SonarQube Server processes the report and stores the analysis report results in the SonarQube Database and displays the results in the UI
-•       Developers review, comment, challenge their Issues to manage and reduce their Technical Debt through the SonarQube UI.
+•       To create reports using SonarQube mvn clean install mvn sonar:sonar -Dsonar.issuesreport.html.enable=true
