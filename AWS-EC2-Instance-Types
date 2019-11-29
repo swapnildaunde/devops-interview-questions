@@ -1,0 +1,7 @@
+AWS EC2 Instance Types:
+General Purpose Instances - (T2, M5, M4, M3)
+Computer Optimized Instances - (C5, C4, C3)
+Memory Optimized Instances - (X1, R4, R3)
+Accelerated Computing Instances - (P3, P2, G3, F1)
+Storage Optimized Instances - (I3)
+Dense Storage Instances - (D2)
