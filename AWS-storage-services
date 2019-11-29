@@ -1,0 +1,31 @@
+Amazon Simple Storage Service (Amazon S3) 
+Amazon S3 provides object storage through a web service interface.
+
+Amazon Glacier
+Amazon Glacier is an online file storage web service that provides storage for data archiving and backup
+
+Amazon Elastic File System (Amazon EFS)
+Amazon Elastic File System provide scalable, elastic, concurrent with some restrictions, 
+and encrypted file storage for use with both AWS cloud services and on-premises resources.
+
+Amazon Elastic Block Store (Amazon EBS)
+Amazon Elastic Block Store (EBS) is an easy to use, high performance block storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale. 
+A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS.
+
+Amazon EC2 Instance Storage
+Amazon EC2 Instance Store. An instance store provides temporary block-level storage for your instance. 
+This storage is located on disks that are physically attached to the host computer. 
+An instance store consists of one or more instance store volumes exposed as block devices.
+
+AWS Storage Gateway
+AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. 
+Your applications connect to the service through a virtual machine or hardware gateway appliance using standard storage protocols, such as NFS, SMB, and iSCSI.
+
+AWS Snowball
+Snowball is a petabyte-scale data transport solution that uses devices designed to be secure to transfer large amounts of data into and out of the AWS Cloud.
+Transferring data with Snowball is simple, fast, more secure, and can be as little as one-fifth the cost of transferring data via high-speed Internet.
+
+Amazon CloudFront
+Amazon CloudFront is a content delivery network offered by Amazon Web Services. 
+Content delivery networks provide a globally-distributed network of proxy servers which cache content, 
+such as web videos or other bulky media, more locally to consumers, thus improving access speed for downloading the content.
