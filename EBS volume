@@ -1,23 +1,54 @@
-EBS volume:
+Amazon EBS is like a hard drive in the cloud that provides persistent block storage volumes for use with Amazon EC2 instances.
+These volumes can be attached to your EC2 instances and allow you to create a file system on top of these volumes, run a database, server or use them in any other way you would use a block device.
 
-one volume can be attached to only one instance at a time.
-instance can have multiple volumes
-you can resize volume, you can increase the size but cann't decrease.
-snapshots are stored in s3
+What is a block storage volume?
+A block storage volume works similarly to a hard drive. You can store any type of files on it or even install a whole Operating System on it.
+EBS volumes are placed in an availability zone, where they are automatically replicated to protect data loss from the failure of a single component.
+But since they are replicated only across a single availability zone you may lose data if the whole availability zone goes down, which is really rare.
 
-snapshot are incremental.i.e new snapshot contains the which is added previous snapshot.
-each volume max provide 10000 IOPS
+EBS Volume Types
+There are five types of EBS volumes. You can use whatever works best for your use case.
 
-Provisios IOPS not a free for free trial. you have for volumes + IOPS
+1. General Purpose SSD (gp2)
+This is the volume that EC2 chooses by default as the root volume of your instance. It provides a balance of both price and performance.
+SSD stands for Solid State Drive which is multiple times faster than HDD (Hard Disk Drive) for small input/output operations.
+Having it as the root volume for your instances can significantly improve the performance of your server.
+Its performance is measured in IOPS (Input-Output Operations per second), means how many input and output operations our server can per second.
+These EBS volumes provide a ratio of 3 IOPS per GB with the ability to burst up to 3000 IOPS for extended periods of time. They support up to 10,000 IOPS and 160 MB/s of throughput.
+1 IOPS — 256 KB/s of read or write operation. 
+IOPS refer to operations on blocks that are up to 256 KB in size.
 
-Root volume is where os installed.
-Volumen Type:  General Purpose SDD
-               Provision Purpose SDD - databases - 
-			   Throughput Optimised HDD
-			    - Designed for throughpout intensive workloads
-				- Use it when you have frequently accessed data
-				- Storage cost is more when compared with cold HDD
-				
-			   Cold HDD - storing for longtime
-			   thoughput - 100mb per sec, when access the data then will charge. you access frequently charges are more.
-			   magentic - for legacy application which give best performance then go with magentic.
+2. Provisioned IOPS SSD (io1)
+This is the fastest and most expensive EBS volume. They are designed for I/O intensive applications such as large Relational or NoSQL databases.
+The size of this volume ranges from 4 GiB to 16 TiB and the IOPS ranges from 100 IOPS to 32,000 IOPS.
+They support up to 500 MB/s of throughput and can be used as root volume for an EC2 instance.
+Here, you are charged for the provisioned IOPS along with the storage space of your volume.
+
+3. Throughput Optimized HDD (st1)
+These are low-cost magnetic storage volumes which define performance in terms of Throughput.
+These are designed for large, sequential workloads like Big Data, Data warehouses, and log processing. You will probably use these volumes for your Hadoop cluster.
+They provide throughput of up to 500 MB/s and cannot be used as root volume for an EC2 instance.
+
+4. Cold HDD (sc1)
+These are even cheaper magnetic storage than Throughput Optimized. They are designed for large, sequential cold workloads like a file server.
+They are good for infrequently accessed workloads and provide throughput of up to 250 MB/s.
+They also cannot be used as root volumes.
+
+5. Magnetic (standard)
+These are previous generation magnetic drives that are suited for workloads where data is accessed infrequently.
+Their size can be up to 1 TiB and on average they provide a throughput of 100 MB/s.
+These can be used as root volumes for EC2 instances.
+
+Snapshots
+You can take snapshots of your EBS volumes that are a point in time images of your volumes (like copies of your volumes).
+You can then use these snapshots to create new EBS volumes with different volume types and attach them to your instances.
+Snapshots can be used as a backup of your volumes. They are stored in Amazon S3 so you automatically get the high durability of S3.
+Snapshots can only be accessed from the EC2 dashboard.
+
+Some Facts
+An EBS volume can only be mounted to a single EC2 instance at a time. If you want to assign a volume to multiple EC2 instances, check out Amazon Elastic File System (EFS).
+EBS root volumes of your default AMIs cannot be encrypted. You can use third-party tools like BitLocker to do that.
+Volumes other than root volume can be encrypted.
+By default, root volumes are deleted on termination of an EC2 instance.
+You can copy snapshots between AWS regions to create volumes in different regions.
+The size of an EBS volume can be up to 16 TiB.
